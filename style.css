@@ -1,17 +1,49 @@
-/* Layout */
+body {
+    text-align: center;
+    margin: 0;
+}
+header {
+    color:  #FFFFFF;
+    background-color: #F15B31;
+    padding:  30px 20px;
+
+}
+h1 {
+    letter-spacing: 1px;
+    font-weight: 400 ;
+    font-size: 45px;
+}
 .main {
-    display: flex;
-    padding: 2em;
-    height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+.container {
     justify-content: center;
     align-items: middle;
-}
+    display: grid;
+    grid-template-columns: 284.8px 284.8px 284.8px 284.8px;
+    grid-template-rows: 620px 620px 620px;
+    grid-gap: 1rem;
+    margin: 0 auto;
 
-.clockbox,
-#clock {
-    width: 100%;
 }
-
+.one:first-child {
+    grid-column: 2 / 3  ;
+}
+.box0:nth-child(2) {
+    grid-column: 1 ;
+}
+.box1:nth-child(3) {
+    grid-column: 3;
+}
+.box2:nth-child(4) {
+    grid-column: 1;
+    grid-row: 3;
+}
+.box3:nth-child(5) {
+    grid-column: 3;
+    grid-row: 3;
+}
 /* Clock styles */
 .circle {
     fill: none;
@@ -58,9 +90,12 @@
 
 /* Make all arms rotate around the same center point. */
 /* Optional: Use transition for animation. */
-#hour,
-#minute,
-#second {
+.hour, .hour0, .hour1, .hour2, .hour3,
+.minute, .minute0, .minute1, .minute2, .minute3,
+.second, .second0, .second1, .second2, .second3 {
     transform-origin: 300px 300px;
     transition: transform .5s ease-in-out;
+}
+#img1 {
+    opacity: 0.4;
 }

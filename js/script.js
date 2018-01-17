@@ -19,7 +19,7 @@
  {
  	city: "Tokyo",
  	country: "Japan",
- 	flag: "Images/japanFlag.png",
+ 	flag: "Images/japanFlag.jpg",
  }
 ];
 
@@ -90,7 +90,15 @@ function runTheClock(){
 
 
 }
-
+var classChange = function(){
+	for(i = 0; i < clocks.length; i ++) {
+	var clockId = document.getElementById(clocks[i].city);
+	clockId.getElementsByClassName('face')[0].classList.add('face' + i);
+	clockId.getElementsByClassName('hour')[0].classList.add('hour' + i);
+	clockId.getElementsByClassName('minute')[0].classList.add('minute' + i);
+	clockId.getElementsByClassName('second')[0].classList.add('second' + i);
+	}
+}
 
 var clockWall = document.getElementById("clockWall");
 var cloneClocks = function(){
@@ -100,28 +108,38 @@ var cloneClocks = function(){
 		clockClone.setAttribute('data-id' , i);
 		var clockId = clockClone.getAttribute('data-id');
 		console.log(clockId);
-		//var clockId = clockClone.getAttribute('data-id');
 		clockClone.setAttribute('id', 'clock' + i);
 		clockClone.classList.remove('one');
 		clockClone.classList.add('box' + i);
 		clockClone.querySelector('svg').setAttribute('id' , clocks[i].city);
 		clockWall.appendChild(clockClone);
-
 	}
+classChange();
+}
 
-	for(i = 0; i < clocks.length; i ++) {
+cloneClocks();
 
-	var clockId = document.getElementById(clocks[i].city);
-
-	clockId.getElementsByClassName('face')[0].classList.add('face' + i);
-	clockId.getElementsByClassName('hour')[0].classList.add('hour' + i);
-	clockId.getElementsByClassName('minute')[0].classList.add('minute' + i);
-	clockId.getElementsByClassName('second')[0].classList.add('second' + i);
-
+var assignLocale = function(){
+	document.querySelectorAll("#location")[1].innerHTML=  "New York";
+	for(i = 2; i < 5; i++){
+	document.querySelectorAll("#location")[i].innerHTML=  clocks[i - 1].city;
 	}
 }
+assignLocale();
 /*change all class names for h.m.s. back to Id. alter those Ids through the DOM. Create references for each new clock - possibly in a loop*/
-cloneClocks();
+var popClockFace = function(){
+	for (i = 0 ; i < clocks.length ; i++){
+		//create cardElement as DOM element
+		var clockElement = document.createElement('img');
+		//assign attributes
+		clockElement.setAttribute('src' , clocks[i].flag);
+		clockElement.setAttribute('class' , 'box' + i);
+		clockElement.setAttribute('id' , 'clock-face' + i);
+		clockElement.setAttribute('data-id' , i);
+		clockWall.appendChild(clockElement);
+	}
+}
+popClockFace();
 
 var interval = setInterval(runTheClock, 1000);
 
