@@ -8,7 +8,7 @@
  {
  	city: "London",
  	country:"England",
- 	flag: "Images/unionJack.png",
+ 	flag: "Images/unionJack.jpg",
 
  },
  {
@@ -127,7 +127,8 @@ var assignLocale = function(){
 }
 assignLocale();
 /*change all class names for h.m.s. back to Id. alter those Ids through the DOM. Create references for each new clock - possibly in a loop*/
-var popClockFace = function(){
+//assigns image from array to specific clockface
+/*var popClockFace = function(){
 	for (i = 0 ; i < clocks.length ; i++){
 		//create cardElement as DOM element
 		var clockElement = document.createElement('img');
@@ -139,7 +140,7 @@ var popClockFace = function(){
 		clockWall.appendChild(clockElement);
 	}
 }
-popClockFace();
+popClockFace();*/
 
 var interval = setInterval(runTheClock, 1000);
 

@@ -116,13 +116,14 @@ h1, h2 {
     transform-origin: 300px 300px;
     transition: transform .5s ease-in-out;
 }
-#clock-face0{
+/*#clock-face0{
     opacity: .5;
     max-height: 508px;
     max-width: 508px;
     position: relative;
     bottom: 36px;
     left: 47px;
+    z-index: -1;
 }
 #clock-face1{
 
@@ -137,6 +138,7 @@ h1, h2 {
     border-radius: 252px;
     -webkit-border-radius: 252px;
     -moz-border-radius: 252px;
+    z-index: -1;
 }
 #clock-face2{
     opacity: .5;
@@ -145,6 +147,7 @@ h1, h2 {
     position: relative;
     bottom: 36px;
     left: 50px;
+    z-index: -1;
 }
 #clock-face3 {
     opacity: .5;
@@ -157,5 +160,37 @@ h1, h2 {
     border-radius: 354px;
     -webkit-border-radius: 354px;
     -moz-border-radius: 354px;
+    z-index: -1;
+
+}*/
+
+#NewYork {
+    background-size: 507.8px 507.8px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../Images/usFlag.png);
+    z-index: -1;
+}
+
+#London {
+    background-size: 507.8px 507.8px;
+    background-position:center center;
+    background-repeat: no-repeat;
+    background-image: url(../Images/unionJack.jpg);
 
 }
+#Paris {
+    background-size: 507.8px 507.8px;
+    background-position:center center;
+    background-repeat:  no-repeat;
+    background-image: url(../Images/franceFlag.png);
+
+}
+#Tokyo {
+    /*background-size: 507.8px 507.8px;
+    background-position:center center;
+    background-repeat: no-repeat;*/
+    background-image: url(../Images/japanFlag.jpg);
+    background-size: contain;
+}
+
