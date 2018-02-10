@@ -28,41 +28,65 @@ h1, h2 {
 .container {
     justify-content: center;
     align-items: center;
-    display: grid;
+    display: flex;
+    flex-flow: row wrap;
     grid-template-columns: repeat(4 , 1fr) ;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-auto-rows: 600px;
+    grid-template-rows: 1fr 45px 1fr 45px 1fr 45px;
+    grid-auto-rows: 300px;
 
 
 }
-.one {
+.box0 {
     grid-column-start: 1;
     grid-column-end: 5;
     grid-row: 1;
 
 }
-.box0 {
+.box1 {
     grid-column-start: 2;
     grid-column-end: 3;
-    grid-row: 2;
-}
-.box1 {
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row: 2;
+    grid-row: 3;
 }
 .box2 {
-    grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
     grid-row: 3;
 }
 .box3 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row: 5;
+}
+.box4 {
     grid-column-start: 3;
     grid-column-end: 4;
-    grid-row: 3;
+    grid-row: 5;
 }
-.nest {
-    grid-row: 3;
+.nest0 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row: 2;
+}
+.nest1 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row: 4;
+}
+.nest2 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row: 4;
+}
+.nest3 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row: 6;
+}
+.nest4 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row: 6;
+    
 }
 /* Clock styles */
 .circle {
@@ -110,9 +134,8 @@ h1, h2 {
 
 /* Make all arms rotate around the same center point. */
 /* Optional: Use transition for animation. */
-.hour, .hour0, .hour1, .hour2, .hour3,
-.minute, .minute0, .minute1, .minute2, .minute3,
-.second, .second0, .second1, .second2, .second3 {
+.hour0, .hour1, .hour2, .hour3, .hour4,
+.minute, .second {
     transform-origin: 300px 300px;
     transition: transform .5s ease-in-out;
 }
@@ -164,33 +187,39 @@ h1, h2 {
 
 }*/
 
-#NewYork {
-    background-size: 507.8px 507.8px;
-    background-position: center center;
-    background-repeat: no-repeat;
+#new-york {
     background-image: url(../Images/usFlag.png);
-    z-index: -1;
-}
-
-#London {
-    background-size: 507.8px 507.8px;
-    background-position:center center;
+    /* max-height: 254px; */
+    /* max-width: 254px; */
     background-repeat: no-repeat;
+    background-size: 85%;
+    background-position: center center;
+    
+}
+
+#london {
     background-image: url(../Images/unionJack.jpg);
+    background-size: 85%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    
 
 }
-#Paris {
-    background-size: 507.8px 507.8px;
-    background-position:center center;
-    background-repeat:  no-repeat;
-    background-image: url(../Images/franceFlag.png);
+#paris {
+    background-image: url(../Images/franceFlag1);
+    background-size: 94.5%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+    
 
 }
-#Tokyo {
+#tokyo {
     /*background-size: 507.8px 507.8px;
     background-position:center center;
     background-repeat: no-repeat;*/
     background-image: url(../Images/japanFlag.jpg);
     background-size: contain;
+    background-repeat:  no-repeat;
 }
 
